@@ -1,5 +1,5 @@
 const GRID_SIZE = 20;
-const INITIAL_SNAKE = [{ x: 0, y: 0 }]; // Start in the top-left corner
+const INITIAL_SNAKE = [{ x: 0, y: 0 }];
 const INITIAL_DIRECTION = { x: 1, y: 0 };
 const GAME_SPEED = 150;
 
@@ -97,7 +97,7 @@ function handleKeyPress(event) {
 }
 
 function resetGame() {
-  snake = [{ x: 0, y: 0 }]; // Start the snake in the top-left corner
+  snake = [{ x: 0, y: 0 }];
   direction = INITIAL_DIRECTION;
   isGameOver = false;
   score = 0;
@@ -105,6 +105,20 @@ function resetGame() {
   resetButton.style.display = "none";
   render();
 }
+
+// Écouteurs d'événements pour les boutons de contrôle
+document.getElementById("up").addEventListener("click", () => {
+  if (direction.y !== 1) direction = { x: 0, y: -1 };
+});
+document.getElementById("down").addEventListener("click", () => {
+  if (direction.y !== -1) direction = { x: 0, y: 1 };
+});
+document.getElementById("left").addEventListener("click", () => {
+  if (direction.x !== 1) direction = { x: -1, y: 0 };
+});
+document.getElementById("right").addEventListener("click", () => {
+  if (direction.x !== -1) direction = { x: 1, y: 0 };
+});
 
 createGrid();
 generateFood();

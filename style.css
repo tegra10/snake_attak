@@ -6,24 +6,29 @@ body {
   height: 100vh;
   background: linear-gradient(to bottom right, #f3e8ff, #e9d5ff);
 }
+
 .grid {
   display: grid;
   background: white;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
 .cell {
   width: 20px;
   height: 20px;
   border: 1px solid #e0e0e0;
 }
+
 .snake {
   background: #6b5b8a;
 }
+
 .food {
   background: #f44336;
   border-radius: 50%;
 }
+
 button {
   margin-top: 20px;
   padding: 10px 20px;
@@ -33,6 +38,39 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
+
 button:hover {
   background: #7e6a9b;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.controls div {
+  display: flex;
+  justify-content: center;
+}
+
+.controls button {
+  width: 50px; /* Ajustez la taille pour mobile */
+  height: 50px; /* Ajustez la taille pour mobile */
+}
+
+@media (max-width: 600px) {
+  .cell {
+    width: 15px;
+    height: 15px;
+  }
+
+  button {
+    padding: 5px 10px;
+  }
+
+  .controls button {
+    width: 40px;
+    height: 40px;
+  }
 }

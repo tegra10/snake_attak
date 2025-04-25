@@ -47,6 +47,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  display: none; /* Masquer par défaut */
 }
 
 .controls div {
@@ -59,7 +60,12 @@ button:hover {
   height: 50px; /* Ajustez la taille pour mobile */
 }
 
+/* Media query pour afficher les boutons sur mobile */
 @media (max-width: 600px) {
+  .controls {
+    display: flex; /* Affiche les boutons sur mobile */
+  }
+
   .cell {
     width: 15px;
     height: 15px;
